@@ -122,6 +122,7 @@ Bu modül bir MVP (Minimum Viable Product) olarak teslim edilmektedir. Gerçek k
 |  | Port uyumsuzluğu, re-render sorunu, EF Core versiyon hatası |
 | Seed Data | Örnek veri üretimi |
 | Dokümantasyon |
+| **Frontend geliştirme** | Önyüz bileşenleri (tablolar, modallar, form yapıları) geliştirilirken yapay zekadan yararlanıldı. MUI bileşen yapıları, TypeScript tip tanımları ve servis katmanı kodları yapay zeka desteğiyle oluşturuldu |
 
 
 
