@@ -1,0 +1,6 @@
+@DepoYonetimi.API_HostAddress = http://localhost:5143
+
+GET {{DepoYonetimi.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
