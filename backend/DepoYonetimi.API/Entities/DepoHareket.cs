@@ -15,6 +15,12 @@ public class DepoHareket : TemelVarlik
     public string? ReferansNo { get; set; } // Sipariş no, fatura no vs.
     public string IslemYapan { get; set; } = string.Empty; // Kullanıcı adı
 
+    // ─── İşlem Takip ────────────────────────────────────────────────────────
+    public string IslemNo { get; set; } = string.Empty; // Otomatik üretilen benzersiz işlem numarası
+    public bool IptalEdildi { get; set; } = false;      // Bu hareket iptal edildi mi?
+    public int? IptalEdenHareketId { get; set; }        // İptal eden hareketin Id'si
+    public string? IpAdresi { get; set; }               // İşlemi yapan kullanıcının IP adresi
+
     // Navigation properties
     public virtual Urun Urun { get; set; } = null!;
     public virtual Depo Depo { get; set; } = null!;
