@@ -103,6 +103,7 @@ public class HareketManager : IHareketManager
             Aciklama = dto.Aciklama,
             ReferansNo = dto.ReferansNo,
             IslemYapan = dto.IslemYapan,
+            IslemNo = $"HRK-{DateTime.UtcNow:yyyyMMddHHmmss}-{Guid.NewGuid().ToString("N")[..6].ToUpper()}",
             OlusturmaTarihi = DateTime.UtcNow
         };
 

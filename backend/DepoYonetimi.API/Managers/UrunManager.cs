@@ -31,12 +31,13 @@ public class UrunManager : IUrunManager
         var (liste, toplamSayisi) = await _urunRepo.ListeGetirAsync(
             filtre.CompanyId, filtre.Arama, filtre.Kategori, filtre.Sayfa, filtre.SayfaBoyutu);
 
-        var dtoListesi = new List<UrunDto>();
-        foreach (var urun in liste)
-        {
-            var toplamStok = await _stokRepo.ToplamStokGetirAsync(urun.Id, filtre.CompanyId);
-            dtoListesi.Add(UrunToDto(urun, toplamStok));
-        }
+        // Tek sorguda tüm ürünlerin stok toplamlarını çek (N+1 önlenir)
+        var urunIdleri = liste.Select(u => u.Id).ToList();
+        var stokToplami = await _stokRepo.ToplamStokBulkGetirAsync(urunIdleri, filtre.CompanyId);
+
+        var dtoListesi = liste
+            .Select(u => UrunToDto(u, stokToplami.GetValueOrDefault(u.Id, 0)))
+            .ToList();
 
         return new PaginatedResponse<UrunDto>
         {

@@ -17,7 +17,7 @@ public class DepoRepository : IDepoRepository
     public async Task<Depo?> GetByIdAsync(int id, string companyId)
     {
         return await _context.Depolar
-            .Where(d => d.Id == id && d.CompanyId == companyId)
+            .Where(d => d.Id == id && d.CompanyId == companyId && !d.IsDeleted)
             .FirstOrDefaultAsync();
     }
 
@@ -25,7 +25,7 @@ public class DepoRepository : IDepoRepository
         string companyId, string? arama, int sayfa, int sayfaBoyutu)
     {
         var query = _context.Depolar
-            .Where(d => d.CompanyId == companyId);
+            .Where(d => d.CompanyId == companyId && !d.IsDeleted);
 
         if (!string.IsNullOrWhiteSpace(arama))
         {

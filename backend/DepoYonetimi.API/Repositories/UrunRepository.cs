@@ -17,7 +17,7 @@ public class UrunRepository : IUrunRepository
     public async Task<Urun?> GetByIdAsync(int id, string companyId)
     {
         return await _context.Urunler
-            .Where(u => u.Id == id && u.CompanyId == companyId)
+            .Where(u => u.Id == id && u.CompanyId == companyId && !u.IsDeleted)
             .FirstOrDefaultAsync();
     }
 
@@ -25,7 +25,7 @@ public class UrunRepository : IUrunRepository
         string companyId, string? arama, string? kategori, int sayfa, int sayfaBoyutu)
     {
         var query = _context.Urunler
-            .Where(u => u.CompanyId == companyId);
+            .Where(u => u.CompanyId == companyId && !u.IsDeleted);
 
         if (!string.IsNullOrWhiteSpace(arama))
         {

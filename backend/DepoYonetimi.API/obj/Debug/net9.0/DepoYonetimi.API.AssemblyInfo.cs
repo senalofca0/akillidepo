@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DepoYonetimi.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9f8e6496da9f0f9480727b520d13c79315af45f")]
 [assembly: System.Reflection.AssemblyProductAttribute("DepoYonetimi.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DepoYonetimi.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

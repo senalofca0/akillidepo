@@ -166,3 +166,4 @@ C:\Users\akcak\Pictures\mt\backend\DepoYonetimi.API\obj\Debug\net9.0\refint\Depo
 C:\Users\akcak\Pictures\mt\backend\DepoYonetimi.API\obj\Debug\net9.0\DepoYonetimi.API.pdb
 C:\Users\akcak\Pictures\mt\backend\DepoYonetimi.API\obj\Debug\net9.0\DepoYonetimi.API.genruntimeconfig.cache
 C:\Users\akcak\Pictures\mt\backend\DepoYonetimi.API\obj\Debug\net9.0\ref\DepoYonetimi.API.dll
+C:\Users\akcak\Pictures\mt\backend\DepoYonetimi.API\obj\Debug\net9.0\DepoYonetimi.API.sourcelink.json

@@ -69,6 +69,16 @@ public class StokRepository : IStokRepository
             .SumAsync(s => s.Miktar);
     }
 
+    // Birden fazla ürünün stok toplamını tek sorguda getirir (N+1 önler)
+    public async Task<Dictionary<int, int>> ToplamStokBulkGetirAsync(List<int> urunIdleri, string companyId)
+    {
+        return await _context.Stoklar
+            .Where(s => urunIdleri.Contains(s.UrunId) && s.CompanyId == companyId)
+            .GroupBy(s => s.UrunId)
+            .Select(g => new { UrunId = g.Key, Toplam = g.Sum(s => s.Miktar) })
+            .ToDictionaryAsync(x => x.UrunId, x => x.Toplam);
+    }
+
     public async Task<Stok> EkleAsync(Stok stok)
     {
         _context.Stoklar.Add(stok);
